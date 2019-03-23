@@ -1,2 +1,5 @@
-var newObj = { name: "Alex", surname: "Shelest", blocked: 0 };
-delete newObj.blocked;
+user.name = "Alex";
+user.surname = "Shelest";
+user.blocked = true;
+
+delete user.blocked;
