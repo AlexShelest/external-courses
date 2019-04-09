@@ -5,7 +5,8 @@ var calculator = {
   },
 
   reset: function () {
-    return (calculator.result = 0);
+    calculator.result = 0;
+    return this.result;
   },
 
   add: function (value) {
