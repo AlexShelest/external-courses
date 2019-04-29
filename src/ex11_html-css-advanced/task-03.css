@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+main {
+  display: grid;
+  width: 50%;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+label {
+  position: relative;
+  border-top: 1px solid gray;
+}
+
+label input {
+  display: block;
+  border: none;
+  width: 100%;
+  margin: 20px 0 5px;
+  padding: 0;
+}
+
+label input + span {
+  position: absolute;
+  top: 12px;
+  font-weight: 700;
+  color: gray;
+  transition: all 0.1s linear;
+  opacity: 0;
+}
+
+label input:valid + span {
+  top: 3px;
+  opacity: 1;
+}
+
+label input:focus + span {
+  color: blueviolet;
+}
