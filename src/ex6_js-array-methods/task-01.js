@@ -2,13 +2,13 @@ function stringSlice(arr, start, end) {
   var slicedArr = [];
   var startPos, endPos;
 
-  if (start === undefined) {
+  if (!start) {
     startPos = 0;
   } else {
     startPos = start;
   }
 
-  if (end === undefined || end >= arr.length) {
+  if (!end || end >= arr.length) {
     endPos = arr.length;
   } else endPos = end;
 

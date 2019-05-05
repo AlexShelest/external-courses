@@ -1,10 +1,11 @@
-function reduce(arr, callback, value) {
-  var before = value === undefined ? arr[0] : value;
-  var i = value === undefined ? 1 : 0;
-  for (i; i < arr.length; i = i + 1) {
-    before = callback(before, arr[i], i, arr);
+function reduce(array, callback, initValue) {
+  var previousValue = initValue === undefined ? array[0] : initValue;
+  var i = initValue === undefined ? 1 : 0;
+
+  for (i; i < array.length; i++) {
+    previousValue = callback(previousValue, array[i], i, array);
   }
-  return before;
+  return previousValue;
 }
 
 module.exports = reduce;
