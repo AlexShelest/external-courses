@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>5 способов создания рамки</title>
+    <style>
+      div {
+        width: 50px;
+        height: 50px;
+        padding: 20px;
+        margin: 20px;
+      }
+      .first {
+        outline: 2px solid black;
+      }
+      .second {
+        box-shadow: 0 0 0 2px blue;
+      }
+      .third {
+        border-style: solid;
+      }
+      .fouth {
+        border: 2px solid green;
+      }
+      .fifth {
+        position: relative;
+      }
+      .fifth::before {
+        display: block;
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        bottom: -2px;
+        left: -2px;
+        background: black;
+        content: "";
+      }
+
+      .fifth:after {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 20px;
+        background: white;
+        content: "5ый способ";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="first">1ый способ</div>
+    <hr />
+    <div class="second">2ой способ</div>
+    <hr />
+    <div class="third">3ий способ</div>
+    <hr />
+    <div class="fouth">4ый способ</div>
+    <hr />
+    <div class="fifth">5ый способ</div>
+  </body>
+</html>
