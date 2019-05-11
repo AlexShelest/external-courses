@@ -50,30 +50,29 @@ module.exports = (exerciseName, read = false, taskExt = 'js') => {
                 return hrefs;
             }, []);
 
-            const styles = hrefs
-                .map(h => readFileSync(`${dirWithTask}/${h}`, 'utf-8'))
-                .concat(styleTag);
+            const bundle = [
+                styleTag,
+                ...hrefs.map(href => readFileSync(`${dirWithTask}/${href}`, 'utf-8')),
+            ].join('');
 
-            for (text of styles) {
-                validateCSS({text, profile: 'css3svg'}, (error, res) => {
-                    if (error) {
-                        console.warn(`Internet connection error: ${error.message}`);
-                        return done();
-                    }
+            validateCSS({text: bundle, profile: 'css3svg'}, (error, res) => {
+                if (error) {
+                    console.warn(`Internet connection error: ${error.message}`);
+                    return done();
+                }
 
-                    const {errors = []} = res;
+                const {errors = []} = res;
 
-                    if (errors.length) {
-                        const report = `\n${errors
+                if (errors.length) {
+                    const report = `\n${errors
                         .map((e, i) => `${i + 1}. ${e.message} in \n ${e.context}`)
                         .join('')
                         .replace(/\s+/g, ' ')}`;
-                        return done.fail(report);
-                    }
+                    return done.fail(report);
+                }
 
-                    return done();
-                })
-            }
+                return done();
+            });
         },
     };
 };

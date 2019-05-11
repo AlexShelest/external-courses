@@ -3,7 +3,14 @@
 ## Задание 1
 
 Создайте HTML-страницу с формой, используя типы для инпутов.
-Макет скачать по [ссылке](https://drive.google.com/drive/folders/1NS38C7K_qvMdKjj85KeeUXjfVk3yCiQB) - Form.png
+
+<p align="center">
+    <img
+        width='750'
+        title='Task'
+        src="https://cdn1.savepice.ru/uploads/2018/11/2/f76f5cff14477729ec1d0eed9c1f2871-full.png"
+    />
+</p>
 
 -   Поле "Country of Residence" должно быть выпадающим списком
 
@@ -15,7 +22,7 @@
 
 -   Попробуйте и `GET`, и `POST` методы
 
--   Используйте `http://httpbin.org/` в качестве конечной точки (Для метода `GET` `http://httpbin.org/get`, а для `POST` `http://httpbin.org/post`)
+-   Используйте `http://httpbin.org/` в качестве конечной точки
 
 [Построение форм](https://webref.ru/layout/learn-html-css/building-forms).
 
