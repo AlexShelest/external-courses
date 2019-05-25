@@ -20,9 +20,9 @@ a:focus {
 .test:hover {
   border: 12px solid violet;
 }
-header > section,
-main > section,
-section > article {
+
+section,
+article {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -51,9 +51,6 @@ section > article {
 
 .top-menu {
   border-top: 1px solid #eceef4;
-}
-
-.top-menu-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -99,8 +96,7 @@ section > article {
   border-right: 1px solid #eceef4;
 }
 
-.top-menu .logo-tablet,
-.top-menu .tablet-burger {
+.logo-tablet {
   display: none;
 }
 
@@ -131,7 +127,7 @@ section > article {
   z-index: -1;
 }
 
-main {
+.content {
   margin-bottom: 180px;
   position: relative;
 }
@@ -342,9 +338,8 @@ article h2 {
 }
 
 @media (max-width: 1199px) {
-  header > section,
-  main > section,
-  section > article {
+  section,
+  article {
     width: 100%;
     max-width: 780px;
     margin: 30px auto;
@@ -385,17 +380,12 @@ article h2 {
   .top-menu .search::before {
     top: 39px;
   }
-  .top-menu .search input {
-    width: 160px;
-  }
-  main .background {
+
+  .background {
     background-image: url(task-03/img/background/tablet.png);
   }
   main .slider {
     display: none;
-  }
-  main .content {
-    margin-top: 405px;
   }
   main .content article {
     flex-basis: 100%;
