@@ -22,7 +22,7 @@ aside {
   background-color: rgb(31, 38, 55);
 }
 
-aside header {
+aside .add-button {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 35px;
@@ -46,7 +46,7 @@ ul {
   list-style-type: none;
 }
 
-header button {
+.add-button button {
   position: relative;
   color: rgb(255, 255, 255);
   font-size: 14px;
@@ -58,9 +58,10 @@ header button {
   border: 1px solid rgb(242, 121, 90);
   padding: 9px 16px;
   background-color: rgb(242, 121, 90);
+  cursor: pointer;
 }
 
-header button i {
+.add-button button i {
   margin-right: 15px;
 }
 

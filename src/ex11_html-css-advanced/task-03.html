@@ -9,27 +9,25 @@
   </head>
 
   <body>
-    <main>
-      <label>
-        <input type="text" required placeholder="Title" />
-        <span>Title</span>
-      </label>
-      <label class="input-left">
-        <input type="text" required placeholder="Price" />
-        <span class="">Price</span>
-      </label>
-      <label class="input-right">
-        <input
-          type="text"
-          required
-          placeholder="Specific Location (optional)"
-        />
-        <span>Specific Location (optional)</span>
-      </label>
-      <label>
-        <input type="text" required placeholder="Description" />
-        <span>Description</span>
-      </label>
-    </main>
+      <form>
+          <div class="field">
+              <input type="text" pattern=".+" required="" id="title" name="title" placeholder="Title">
+              <label for="title">Title</label>
+          </div>  
+          <div class="group">
+              <div class="field">
+                  <input type="text" pattern=".+" required="" placeholder="Price">
+                  <label>Price</label>
+              </div>
+              <div class="field">
+                  <input type="text" pattern=".+" required="" placeholder="Specific Location (optional)">
+                  <label>Specific location (optional)</label>
+              </div>  
+          </div>
+          <div class="field">
+              <input type="text" pattern=".+" required="" placeholder="Description">
+              <label>Description</label>
+          </div>
+      </form>
   </body>
 </html>
