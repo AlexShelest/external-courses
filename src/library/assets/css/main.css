@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   height: 100%;
 }
@@ -8,9 +13,10 @@ body {
   height: 100vh;
   color: rgb(120, 130, 157);
   font-family: "Proxima Nova", sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 a {
@@ -23,54 +29,6 @@ ul {
   list-style-type: none;
 }
 
-body > header {
-  display: flex;
-  justify-content: flex-end;
-  background-color: rgb(47, 54, 74);
-}
-
-header ul {
-  display: flex;
-  flex-direction: row;
-}
-
-header li a {
-  position: relative;
-  display: block;
-  padding: 18px 20px;
-  color: rgba(120, 130, 157, 0.8);
-}
-
-header ul li:first-child a::before {
-  content: "";
-  position: absolute;
-  top: 24px;
-  right: -2px;
-  width: 4px;
-  height: 4px;
-  background-color: rgba(25, 32, 46, 0.749);
-  border-radius: 50%;
-}
-
-header .author {
-  background-color: rgb(21, 164, 250);
-}
-
-header .author a {
-  color: rgb(255, 255, 255);
-}
-
-header .author i {
-  margin-left: 15px;
-}
-
-header .author img {
-  width: 36px;
-  height: 36px;
-  border: 2px solid rgb(238, 241, 247);
-  border-radius: 50%;
-}
-
 container {
   display: flex;
   flex-direction: row;
@@ -78,6 +36,7 @@ container {
 }
 
 aside {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-basis: 200px;
@@ -107,6 +66,10 @@ aside header button {
   cursor: pointer;
 }
 
+aside header button a {
+  color: rgb(255, 255, 255);
+}
+
 aside header button i {
   margin-right: 15px;
 }
@@ -131,104 +94,6 @@ aside nav a i {
 
 aside nav a:hover {
   color: rgb(255, 255, 255);
-  background-color: rgb(21, 164, 250);
-}
-
-main {
-  flex: 1;
-}
-
-main header {
-  background-color: rgb(238, 241, 247);
-}
-
-main header h1 {
-  padding: 25px 20px;
-  margin: 0;
-  margin-bottom: 15px;
-  color: rgb(68, 76, 99);
-  font-size: 22px;
-  font-weight: 400;
-  border-bottom: 1px solid rgb(218, 223, 234);
-}
-
-main .bottom-panel {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px 15px;
-  border-bottom: 1px solid rgb(218, 223, 234);
-}
-
-main section {
-  padding: 30px 20px;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-section article {
-  flex-basis: 300px;
-}
-
-section article:nth-child(1),
-section article:nth-child(2),
-section article:nth-child(3),
-section article:nth-child(4),
-section article:nth-child(5) {
-  margin-bottom: 30px;
-}
-
-section figure {
-  margin: 0;
-}
-
-figure figcaption {
-  color: rgb(68, 76, 99);
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-figure img {
-  margin-bottom: 15px;
-}
-
-article > span {
-  display: block;
-  color: rgb(111, 125, 149);
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-article .rating i {
-  color: rgb(255, 171, 0);
-  font-size: 14px;
-}
-
-footer {
-  display: flex;
-  justify-content: flex-end;
-  flex-shrink: 0;
-  background-color: rgb(24, 30, 44);
-}
-
-footer ul {
-  display: flex;
-  flex-direction: row;
-}
-
-footer ul li a {
-  display: block;
-  padding: 15px 20px;
-  color: rgb(255, 255, 255);
-  font-size: 16px;
-}
-
-footer ul li:first-child {
-  background-color: rgb(31, 38, 55);
-}
-
-footer ul li:last-child {
   background-color: rgb(21, 164, 250);
 }
 
@@ -279,9 +144,11 @@ footer ul li:last-child {
 }
 
 .history {
-  padding: 35px 20px;
+  height: calc(100% - 105px - 333px - 194px - 18px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 32px 20px;
   position: relative;
-  margin-bottom: 52px;
 }
 
 .history > div {
@@ -309,6 +176,35 @@ footer ul li:last-child {
   margin-bottom: 20px;
 }
 
+main {
+  flex: 1;
+  position: relative;
+  height: calc(100vh - 45px);
+}
+
+main header {
+  background-color: rgb(238, 241, 247);
+}
+
+main header h1 {
+  padding: 25px 20px;
+  margin: 0;
+  margin-bottom: 15px;
+  color: rgb(68, 76, 99);
+  font-size: 22px;
+  font-weight: 400;
+  border-bottom: 1px solid rgb(218, 223, 234);
+}
+
+main .bottom-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 15px;
+  border-bottom: 1px solid rgb(218, 223, 234);
+}
+
 .bottom-panel a {
   display: inline-block;
   padding: 3px 12px;
@@ -323,7 +219,6 @@ footer ul li:last-child {
 
 .bottom-panel form {
   width: 400px;
-  position: relative;
 }
 
 .bottom-panel input {
@@ -334,11 +229,89 @@ footer ul li:last-child {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-.bottom-panel button {
+main section {
+  display: flex;
+  flex-flow: row wrap;
   position: absolute;
-  top: 8px;
-  right: 20px;
-  color: rgb(120, 130, 157);
-  background-color: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: calc(100% - 35px);
+  height: calc(100% - 145px - 130px);
+  top: calc(123px + 40px);
+  left: calc(10px + 15px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+section article {
+  flex-basis: 300px;
+  margin-bottom: 30px;
+}
+
+section figure {
+  margin: 0;
+}
+
+figure figcaption {
+  color: rgb(68, 76, 99);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+figure img {
+  margin-bottom: 15px;
+}
+
+article > span {
+  display: block;
+  color: rgb(111, 125, 149);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+article .rating {
+  display: flex;
+  justify-content: flex-start;
+}
+
+article .rating div {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+article .rating div > i {
+  margin: 0 2px 0 0;
+  color: rgb(255, 171, 0);
+}
+
+article .rating div > i.fa:nth-child(1) {
+  order: 5;
+}
+
+article .rating div > i.fa:nth-child(2) {
+  order: 4;
+}
+
+article .rating div > i.fa:nth-child(3) {
+  order: 3;
+}
+
+article .rating div > i.fa:nth-child(4) {
+  order: 2;
+}
+
+article .rating div > i.fa:nth-child(5) {
+  order: 1;
+}
+
+article .rating div > i:hover ~ .fa,
+article .rating div > i.fa:hover ~ .far,
+article .rating div > i:hover ~ .far,
+article .rating div > i.far:hover ~ .far {
+  font-weight: normal;
+}
+
+article .rating div > .paint,
+article .rating div > .far.paint ~ .far,
+article .rating div > i.far:hover,
+article .rating div > i.far:hover ~ i.far {
+  font-weight: bold;
 }

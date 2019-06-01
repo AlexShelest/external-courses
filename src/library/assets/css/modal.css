@@ -1,0 +1,92 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  transition: opacity 400ms ease-in;
+}
+
+.modal > div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 15px 20px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #333;
+  text-align: center;
+}
+
+.close i {
+  font-size: 16px;
+}
+
+.close:hover i {
+  color: steelblue;
+}
+
+.modal h2 {
+  margin-bottom: 25px;
+  color: steelblue;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.modal label {
+  margin-bottom: 15px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal label input[type="text"],
+.modal label input[type="url"] {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.modal > form > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.modal button {
+  padding: 5px 20px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background-color: gray;
+  border: 1px solid gray;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-left: 35%;
+  cursor: pointer;
+}
+.modal button:hover {
+  background-color: steelblue;
+}
+
+.modal .check {
+  margin-left: 25px;
+}
